@@ -1,0 +1,15 @@
+-- Sample queries for relational database
+
+-- View customers and their coffee preferences
+SELECT
+  c.first_name,
+  c.alias,
+  cf.name AS coffee
+FROM customer_table c
+LEFT JOIN coffee_table cf
+ON c.coffee_id = cf.id;
+
+-- Update a customer's coffee preference
+UPDATE customer_table
+SET coffee_id = 4
+WHERE first_name = 'groot';

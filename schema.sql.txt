@@ -1,0 +1,20 @@
+-- Schema for MySQL Relational Database Project
+
+CREATE TABLE coffee_table (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  region VARCHAR(50),
+  roast VARCHAR(20)
+);
+
+CREATE TABLE customer_table (
+  id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  origin VARCHAR(50),
+  age INT,
+  alias VARCHAR(50),
+  beard BOOLEAN,
+  coffee_id INT,
+  FOREIGN KEY (coffee_id) REFERENCES coffee_table(id)
+);
